@@ -1,129 +1,219 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#000000">
-    <title>Datenschutz Kampagne</title>
-    <link rel="preload" as="image" href="images/person-a.png" id="heroPreload">
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <main class="campaign" aria-label="Mobile Datenschutzkampagne">
-      <section class="panel hero" id="start">
-        <img class="hero__image" id="heroImage" src="images/person-a.png" alt="Portrait einer Person mit QR-Code statt Gesicht">
-        <div class="glass-card loading-card" aria-label="Profil wird geladen">
-          <p>Profil wird geladen...</p>
-          <div class="progress-row">
-            <div class="progress-track" aria-hidden="true">
-              <span class="progress-fill"></span>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Datenschutz-Aufklärungskampagne</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- INITIAL LOADING STATE -->
+  <div id="loading-overlay" class="loading-overlay">
+    <div class="loading-content">
+      <div class="loading-text" id="loading-text">Profil wird geladen</div>
+      <div class="loading-bar-wrapper">
+        <div class="loading-bar-fill" id="loading-bar-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN SCROLL CONTAINER -->
+  <main class="scroll-container" id="scroll-container">
+    
+    <!-- SCREEN 1: DIGITAL IDENTITY (PROFILSEITE) -->
+    <section id="screen-1" class="screen-section">
+      <div class="grey-aura-background"></div>
+      <div class="profile-image-wrapper">
+        <img id="profile-img" src="" alt="Profilbild">
+      </div>
+      
+      <div class="profile-card">
+        <div class="info-grid" id="profile-info-grid">
+          <!-- Rows injected via JS for typing effect -->
+        </div>
+      </div>
+      <div class="screen-footer">
+        <svg class="footer-arrow-down" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+    </section>
+
+    <!-- SCREEN 2: CORE STATEMENT (AHA-MOMENT) -->
+    <section id="screen-2" class="screen-section centered-content">
+      <div class="aura-background"></div>
+      <div class="statement-container">
+        <h1 class="statement-main">
+          DAS ALLES<br>
+          KÖNNTEN<br>
+          <span class="text-purple">UNTERNEHMEN</span><br>
+          AUCH <span class="text-purple">ÜBER</span><br>
+          <span class="text-purple">DICH WISSEN</span>
+        </h1>
+      </div>
+      <div class="screen-footer">
+        <span class="footer-nav-text">Wie kann das passieren?</span>
+        <svg class="footer-arrow-down" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+    </section>
+
+    <!-- SCREEN 3: VIDEO INTRODUCTION (DIE STORY) -->
+    <section id="screen-3" class="screen-section">
+      <div class="video-screen-content">
+        <p class="video-intro-text">
+          Jeden Tag treffen wir online kleine Entscheidungen.<br>
+          Oft merken wir gar nicht, welche Informationen wir<br>
+          dabei preisgeben.
+        </p>
+
+        <div class="video-container-wrapper">
+          <div class="klick-hint">
+            <img src="/circular-arrow.png" alt="Pfeil" class="klick-arrow-img">
+            <span class="klick-text">KLICK MICH</span>
+          </div>
+          <div class="video-box" id="video-player-wrapper">
+            <div id="youtube-embed-container" style="width: 100%; height: 100%;">
+              <iframe width="100%" height="100%" 
+                src="https://www.youtube.com/embed/jNQXAC9IVRw?rel=0" 
+                frameborder="0" 
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
             </div>
-            <strong>87%</strong>
           </div>
         </div>
-        <a class="scroll-cue" href="#profil" aria-label="Weiter zum Profil"></a>
-      </section>
+      </div>
+      <div class="screen-footer">
+        <span class="footer-nav-text">Woher wissen sie das?</span>
+        <svg class="footer-arrow-down" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+    </section>
 
-      <section class="panel profile" id="profil">
-        <img class="profile__image" id="profileImage" src="images/person-a.png" alt="">
-        <div class="glass-card profile-card">
-          <dl>
-            <div><dt>Name:</dt><dd data-profile-field="name">Paul</dd></div>
-            <div><dt>Alter:</dt><dd data-profile-field="age">22</dd></div>
-            <div><dt>Wohnort:</dt><dd data-profile-field="location">Karlsruhe</dd></div>
-            <div><dt>Beziehung:</dt><dd data-profile-field="relationship">Vergeben</dd></div>
-            <div><dt>Zuletzt besucht:</dt><dd data-profile-field="lastVisited">www.fremdgehen.de</dd></div>
-            <div><dt>Interessen:</dt><dd data-profile-field="interests">Fußball, Gaming, Fitness</dd></div>
-          </dl>
+    <!-- SCREEN 4: INTERACTIVE FLASHCARDS (DIE FAKTEN) -->
+    <section id="screen-4" class="screen-section centered-content">
+      <div class="cards-screen-content">
+        <div class="flashcards-grid" id="flashcards-grid">
+          <!-- Cards injected via JS -->
         </div>
-        <a class="scroll-cue" href="#wake-up" aria-label="Weiter"></a>
-      </section>
+      </div>
+      <div class="screen-footer">
+        <span class="footer-nav-text">Was passiert mit meinen Daten?</span>
+        <svg class="footer-arrow-down" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+    </section>
 
-      <section class="panel wake" id="wake-up">
-        <h1>
-          Das alles könnten
-          <span>Unternehmen</span>
-          auch <span>über dich wissen</span>
-        </h1>
-        <div class="wake__copy">
-          <p>Scroll weiter.</p>
-          <p>Wir zeigen dir, wie das funktioniert...</p>
-        </div>
-        <a class="scroll-cue" href="#scan" aria-label="Weiter zum Scan"></a>
-      </section>
+    <!-- SCREEN 5: SWIPABLE CARD STACK (DIE KONSEQUENZEN) -->
+    <section id="screen-5" class="screen-section centered-content">
+      <div class="tinder-deck" id="tinder-deck">
+        <!-- Cards injected via JS -->
+      </div>
+      <div class="screen-footer">
+        <span class="footer-nav-text">Was kann ich dagegen tun?</span>
+        <svg class="footer-arrow-down" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+    </section>
 
-      <section class="panel scan" id="scan">
-        <header>
-          <h2>Seit du diese Seite geöffnet hast</h2>
-          <p>*So könnte es aussehen wenn du eine andere Seite öffnest</p>
-        </header>
-        <div class="timer-box">
-          <span id="sessionTimer">00:37 min</span>
-        </div>
-        <ul class="scan-list" aria-label="Erkannte Datenspuren">
-          <li>Standortdaten möglich</li>
-          <li>Geräteinformationen erkannt</li>
-          <li>Tracker erkannt</li>
-          <li>Verhaltensdaten entstanden</li>
+    <!-- SCREEN 6: CHECKLIST & MAẞNAHMEN (DIE KONTROLLE) -->
+    <section id="screen-6" class="screen-section">
+      <div class="checklist-screen-content">
+        <h2 class="checklist-title">Du hast Kontrolle.<br>Schütze was dich ausmacht.</h2>
+        
+        <ul class="measures-list" id="measures-list">
+          <li class="checklist-item fade-in-row" onclick="toggleChecklistItem(this)">
+            <input type="checkbox" class="hidden-checkbox">
+            <svg class="purple-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span class="checklist-text">Prüfe App-Berechtigungen regelmäßig</span>
+          </li>
+          
+          <li class="checklist-item fade-in-row" onclick="toggleChecklistItem(this)">
+            <input type="checkbox" class="hidden-checkbox">
+            <svg class="purple-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span class="checklist-text">Verwende sichere Passwörter und Zwei-Faktor-Authentifizierung</span>
+          </li>
+
+          <li class="checklist-item fade-in-row" onclick="toggleChecklistItem(this)">
+            <input type="checkbox" class="hidden-checkbox">
+            <svg class="purple-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span class="checklist-text">Teile nur Informationen, die wirklich notwendig sind</span>
+          </li>
+
+          <li class="checklist-item fade-in-row" onclick="toggleChecklistItem(this)">
+            <input type="checkbox" class="hidden-checkbox">
+            <svg class="purple-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span class="checklist-text">Lösche ungenutzte Apps</span>
+          </li>
+
+          <li class="checklist-item fade-in-row" onclick="toggleChecklistItem(this)">
+            <input type="checkbox" class="hidden-checkbox">
+            <svg class="purple-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span class="checklist-text">Nutze datenschutzfreundliche Browser und Suchmaschinen</span>
+          </li>
+
+          <li class="checklist-item fade-in-row" onclick="toggleChecklistItem(this)">
+            <input type="checkbox" class="hidden-checkbox">
+            <svg class="purple-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span class="checklist-text">Hinterfrage, welche Daten du freiwillig preisgibst</span>
+          </li>
         </ul>
-        <a class="scroll-cue" href="#facts" aria-label="Weiter zu Fakten"></a>
-      </section>
+      </div>
+      
+      <div class="screen-footer">
+        <svg class="footer-arrow-down" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+    </section>
 
-      <section class="panel facts" id="facts">
-        <div class="fact-grid fact-grid--teasers" aria-label="Kurzfakten">
-          <article class="fact-card">
-            <small>Fakt 1:</small>
-            <h3>Sie wissen,<br>wo du warst</h3>
-          </article>
-          <article class="fact-card">
-            <small>Fakt 2:</small>
-            <h3>Sie wissen,<br>was dich interessiert</h3>
-          </article>
-          <article class="fact-card">
-            <small>Fakt 3:</small>
-            <h3>Sie wissen,<br>wann du wach bist</h3>
-          </article>
-          <article class="fact-card">
-            <small>Fakt 4:</small>
-            <h3>Sie wissen,<br>wonach du suchst</h3>
-          </article>
-        </div>
-        <button class="more-button" type="button" aria-expanded="false" aria-controls="detailFacts">Mehr anzeigen</button>
-        <div class="fact-grid fact-grid--details" id="detailFacts" hidden>
-          <article class="fact-card fact-card--text">
-            <h3>Standortdaten</h3>
-            <p>Viele Apps erfassen deinen Standort. Bewegungsmuster zeigen, wo du wohnst, arbeitest oder deine Freizeit verbringst.</p>
-          </article>
-          <article class="fact-card fact-card--text">
-            <h3>Likes & Interaktionen</h3>
-            <p>Jeder Like, Kommentar oder gespeicherte Beitrag verrät etwas über Interessen, Vorlieben und mögliche Entscheidungen.</p>
-          </article>
-          <article class="fact-card fact-card--text">
-            <h3>Nutzungszeiten</h3>
-            <p>Anhand deiner Aktivität erkennen Plattformen, wann du online bist, schläfst und zu welchen Tageszeiten du aktiv bist.</p>
-          </article>
-          <article class="fact-card fact-card--text">
-            <h3>Suchverhalten</h3>
-            <p>Suchanfragen verraten Wünsche, Probleme, Fragen und Interessen. Oft erzählen sie mehr als ein normales Gespräch.</p>
-          </article>
-        </div>
-        <h2 class="control-line">Aber Du hast Kontrolle.</h2>
-        <a class="scroll-cue" href="#control" aria-label="Weiter zu Tipps"></a>
-      </section>
+    <!-- SCREEN 7: INTERACTIVE PRIVACY QUIZ (DER SELBSTTEST) -->
+    <section id="screen-7" class="screen-section quiz-section">
+      <h2 class="quiz-main-title">Wie gut kennst du deine<br>Daten wirklich?</h2>
+      
+      <div class="quiz-navigator" id="quiz-navigator">
+        Frage 1 von 7
+      </div>
+      
+      <div class="quiz-container" id="quiz-container">
+        <!-- Quiz questions injected via JS -->
+      </div>
+      
+      <div class="quiz-submit-wrapper">
+        <button class="quiz-submit-btn" id="quiz-submit-btn" onclick="nextQuizQuestion()">Weiter</button>
+      </div>
+    </section>
 
-      <section class="panel control" id="control">
-        <h2>Aber Du hast Kontrolle.<br>Schütze was dich ausmacht.</h2>
-        <ul class="check-list">
-          <li>Prüfe App-Berechtigungen regelmäßig</li>
-          <li>Verwende sichere Passwörter und Zwei-Faktor-Authentifizierung</li>
-          <li>Teile nur Informationen, die wirklich notwendig sind</li>
-          <li>Lösche ungenutzte Apps</li>
-          <li>Nutze datenschutzfreundliche Browser und Suchmaschinen</li>
-          <li>Hinterfrage, welche Daten du freiwillig preisgibst</li>
-        </ul>
-        <a class="scroll-cue" href="#start" aria-label="Zurück zum Anfang"></a>
-      </section>
-    </main>
-    <script src="script.js"></script>
-  </body>
+    <!-- SCREEN 8: CONCLUSION (Added dynamically upon submit) -->
+    <section id="screen-8" class="screen-section centered-content" style="display: none;">
+      <div id="conclusion-container" style="width: 85%; max-width: 400px;">
+        <!-- Filled by JS -->
+      </div>
+    </section>
+
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
 </html>
