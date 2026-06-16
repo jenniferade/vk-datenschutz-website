@@ -12,12 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const flashcardsData = [
-    { label: "FAKT 1:", title: "SIE WISSEN <br>WO DU WARST", backTitle: "STANDORTDATEN", desc: "Viele Apps erfassen deinen Standort. Selbst wenn du keine Adresse eingibst, können Bewegungsmuster zeigen, wo du wohnst, arbeitest oder deine Freizeit verbringst" },
-    { label: "FAKT 2:", title: "SIE WISSEN WAS<br>DICH INTERESSIERT", backTitle: "LIKES & INTERAKTIONEN", desc: "Jeder Like, Kommentar oder gespeicherte Beitrag verrät etwas über deine Interessen. Daraus entstehen Profile über Hobbys, Vorlieben und mögliche Kaufentscheidungen" },
-    { label: "FAKT 3:", title: "SIE WISSEN <br>WANN DU WACH BIST", backTitle: "NUTZUNGSZEITEN", desc: "Anhand deiner Aktivität können Plattformen erkennen, wann du online bist, wann du schläfst und zu welchen Tageszeiten du am aktivsten bist." },
-    { label: "FAKT 4:", title: "SIE WISSEN <br>WONACH DU SUCHST", backTitle: "SUCHVERHALTEN", desc: "Suchanfragen verraten Wünsche, Probleme, Fragen und Interessen. Oft erzählen sie mehr über eine Person als ein normales Gespräch." },
-    { label: "FAKT 5:", title: "SIE WISSEN WER<br>DEINE FREUNDE SIND", backTitle: "KONTAKTE & NETZWERK", desc: "Gibst du Zugriff auf dein Adressbuch, erfahren Apps nicht nur Details über dich, sondern auch über deine Kontakte – selbst wenn diese die App gar nicht nutzen." },
-    { label: "FAKT 6:", title: "SIE SEHEN <br>DEINE FOTOS", backTitle: "FOTOGALERIE & METADATEN", desc: "Fotos enthalten unsichtbare EXIF-Daten mit genauen Standorten und Uhrzeiten. Apps können so rekonstruieren, wann du wo und mit wem warst." },
+    { label: "FAKT 1:", title: "SIE WISSEN <br>WO DU WARST", backTitle: "STANDORTDATEN", desc: "Viele Apps erfassen deinen Standort. Die Bewegungsmuster zeigen genau, wo du wohnst, arbeitest und deine Freizeit verbringst." },
+    { label: "FAKT 2:", title: "SIE WISSEN WAS<br>DICH INTERESSIERT", backTitle: "LIKES & INTERAKTIONEN", desc: "Likes, Kommentare und Beiträge verraten deine Interessen. Daraus entstehen detaillierte Profile für zielgerichtete Werbung." },
+    { label: "FAKT 3:", title: "SIE WISSEN <br>WANN DU WACH BIST", backTitle: "NUTZUNGSZEITEN", desc: "Plattformen tracken deine Online-Zeiten. Sie wissen genau, wann du schläfst, wach bist und das Handy nutzt." },
+    { label: "FAKT 4:", title: "SIE WISSEN <br>WONACH DU SUCHST", backTitle: "SUCHVERHALTEN", desc: "Suchanfragen enthüllen Wünsche, Sorgen und Interessen. Oft offenbaren sie mehr über dich als ein persönliches Gespräch." },
+    { label: "FAKT 5:", title: "SIE WISSEN WER<br>DEINE FREUNDE SIND", backTitle: "KONTAKTE & NETZWERK", desc: "Adressbuch-Zugriff teilt Daten von dir und deinen Kontakten – selbst wenn diese die App gar nicht nutzen." },
+    { label: "FAKT 6:", title: "SIE SEHEN <br>DEINE FOTOS", backTitle: "FOTOGALERIE & METADATEN", desc: "Fotos enthalten Metadaten (EXIF) mit Standorten und Zeiten. Apps rekonstruieren so, wann du wo und mit wem warst." },
   ];
 
   const tinderStackData = [
