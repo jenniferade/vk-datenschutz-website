@@ -5,25 +5,26 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================
 
   const personas = {
-    a: { name: "Anna", age: "19", location: "Berlin", relationship: "Single", lastVisit: "instagram.com", image: "1_a.png", interests: "Fashion, Lifestyle" },
-    b: { name: "Ben", age: "21", location: "Hamburg", relationship: "Vergeben", lastVisit: "twitch.tv", image: "1_b.png", interests: "Gaming, Tech" },
-    c: { name: "Clara", age: "18", location: "München", relationship: "Kompliziert", lastVisit: "tiktok.com", image: "1_c.png", interests: "Musik, Kunst" },
-    fallback: { name: "Anna", age: "19", location: "Berlin", relationship: "Single", lastVisit: "instagram.com", image: "1_a.png", interests: "Fashion, Lifestyle" }
+    a: { name: "Paul", age: "22", location: "Karlsruhe", relationship: "Vergeben", lastVisit: "fremdgehen.de", image: "1_a.png", interests: "Fußball, Gaming, Fitness" },
+    b: { name: "Clara", age: "13", location: "Stuttgart", relationship: "Single", lastVisit: "hobby-horsing.de", image: "1_b.png", interests: "Reiten, Fashion, Zeichnen" },
+    c: { name: "Ute", age: "72", location: "Freiburg", relationship: "Vergeben", lastVisit: "gebisse-günstig.de", image: "1_c.png", interests: "Sammelbildchen, Backrezepte, Garten" },
+    fallback: { name: "Paul", age: "22", location: "Karlsruhe", relationship: "Vergeben", lastVisit: "fremdgehen.de", image: "1_a.png", interests: "Fußball, Gaming, Fitness" },
   };
 
   const flashcardsData = [
-    { label: "FAKT 1:", title: "SIE WISSEN,<br>WO DU WARST", desc: "Bewegungsdaten via GPS und WLAN." },
-    { label: "FAKT 2:", title: "SIE WISSEN, WAS<br>DICH INTERESSIERT", desc: "Psychologische Profile durch Klicks." },
-    { label: "FAKT 3:", title: "SIE WISSEN,<br>WANN DU WACH BIST", desc: "Schlafrhythmus anhand der Nutzung." },
-    { label: "FAKT 4:", title: "SIE WISSEN,<br>WONACH DU SUCHST", desc: "Suchmaschinen protokollieren alles." },
-    { label: "FAKT 5:", title: "SIE KENNEN<br>DEINE FREUNDE", desc: "Kontaktlisten und Interaktionen." },
-    { label: "FAKT 6:", title: "SIE WISSEN,<br>WIE DU FÜHLST", desc: "Stimmungsanalyse durch Algorithmen." }
+    { label: "FAKT 1:", title: "SIE WISSEN <br>WO DU WARST", backTitle: "STANDORTDATEN", desc: "Viele Apps erfassen deinen Standort. Selbst wenn du keine Adresse eingibst, können Bewegungsmuster zeigen, wo du wohnst, arbeitest oder deine Freizeit verbringst" },
+    { label: "FAKT 2:", title: "SIE WISSEN WAS<br>DICH INTERESSIERT", backTitle: "LIKES & INTERAKTIONEN", desc: "Jeder Like, Kommentar oder gespeicherte Beitrag verrät etwas über deine Interessen. Daraus entstehen Profile über Hobbys, Vorlieben und mögliche Kaufentscheidungen" },
+    { label: "FAKT 3:", title: "SIE WISSEN <br>WANN DU WACH BIST", backTitle: "NUTZUNGSZEITEN", desc: "Anhand deiner Aktivität können Plattformen erkennen, wann du online bist, wann du schläfst und zu welchen Tageszeiten du am aktivsten bist." },
+    { label: "FAKT 4:", title: "SIE WISSEN <br>WONACH DU SUCHST", backTitle: "SUCHVERHALTEN", desc: "Suchanfragen verraten Wünsche, Probleme, Fragen und Interessen. Oft erzählen sie mehr über eine Person als ein normales Gespräch." },
+    { label: "FAKT 5:", title: "SIE WISSEN WER<br>DEINE FREUNDE SIND", backTitle: "KONTAKTE & NETZWERK", desc: "Gibst du Zugriff auf dein Adressbuch, erfahren Apps nicht nur Details über dich, sondern auch über deine Kontakte – selbst wenn diese die App gar nicht nutzen." },
+    { label: "FAKT 6:", title: "SIE SEHEN <br>DEINE FOTOS", backTitle: "FOTOGALERIE & METADATEN", desc: "Fotos enthalten unsichtbare EXIF-Daten mit genauen Standorten und Uhrzeiten. Apps können so rekonstruieren, wann du wo und mit wem warst." },
   ];
 
   const tinderStackData = [
-    { title: "Dynamic Pricing & Nudging", desc: "Unternehmen passen Preise an dein Kaufverhalten an. Du bezahlst mehr, wenn du dringend buchen musst." },
-    { title: "Filterblasen & Manipulation", desc: "Algorithmen zeigen dir nur Inhalte, die deine Meinung verstärken. Das beeinflusst dein Denken." },
-    { title: "Du bekommst eine<br>digitale Version von dir", desc: "Aus Daten entsteht ein Profil.<br>Dieses Profil entscheidet mit,<br>was du online siehst" }
+    { title: "Du bekommst eine digitale Version von dir", desc: "Aus Daten entsteht ein Profil. Dieses Profil entscheidet mit, was du online siehst" },
+    { title: "Deine Entscheidungen können beeinflusst werden", desc: "Werbung, Empfehlungen und Inhalte werden angepasst. Das kann dein Verhalten steuern" },
+    { title: "Du verlierst Kontrolle über deine Daten", desc: "Einmal gesammelte Daten bleiben oft gespeichert. Du weißt nicht immer, wer sie nutzt." },
+    { title: "Deine Schwächen werden ausgenutzt", desc: "Algorithmen erkennen, wenn du abgelenkt, traurig oder impulsiv bist. Genau in diesen Momenten wird dir gezielt Werbung ausgespielt." }
   ];
 
   const quizData = [
@@ -190,6 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <h3>${card.title}</h3>
           </div>
           <div class="card-face card-back">
+            <span class="back-title">${card.backTitle}</span>
             <p>${card.desc}</p>
           </div>
         </div>
