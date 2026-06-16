@@ -5,10 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================
 
   const personas = {
-    a: { name: "Anna", age: "19", location: "Berlin", relationship: "Single", lastVisit: "instagram.com", image: "/1_a.png", interests: "Fashion, Lifestyle" },
-    b: { name: "Ben", age: "21", location: "Hamburg", relationship: "Vergeben", lastVisit: "twitch.tv", image: "/1_b.png", interests: "Gaming, Tech" },
-    c: { name: "Clara", age: "18", location: "München", relationship: "Kompliziert", lastVisit: "tiktok.com", image: "/1_c.png", interests: "Musik, Kunst" },
-    fallback: { name: "Anna", age: "19", location: "Berlin", relationship: "Single", lastVisit: "instagram.com", image: "/1_a.png", interests: "Fashion, Lifestyle" }
+    a: { name: "Anna", age: "19", location: "Berlin", relationship: "Single", lastVisit: "instagram.com", image: "1_a.png", interests: "Fashion, Lifestyle" },
+    b: { name: "Ben", age: "21", location: "Hamburg", relationship: "Vergeben", lastVisit: "twitch.tv", image: "1_b.png", interests: "Gaming, Tech" },
+    c: { name: "Clara", age: "18", location: "München", relationship: "Kompliziert", lastVisit: "tiktok.com", image: "1_c.png", interests: "Musik, Kunst" },
+    fallback: { name: "Anna", age: "19", location: "Berlin", relationship: "Single", lastVisit: "instagram.com", image: "1_a.png", interests: "Fashion, Lifestyle" }
   };
 
   const flashcardsData = [
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const profileImg = document.getElementById('profile-img');
   if (profileImg) {
     profileImg.src = activePersona.image;
-    profileImg.onerror = () => profileImg.src = '/1.png';
+    profileImg.onerror = () => profileImg.src = '1_a.png';
   }
 
   // ==========================================
